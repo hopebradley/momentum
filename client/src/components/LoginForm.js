@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginForm = () => {
+const LoginForm = ({ logInUser }) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -8,7 +8,18 @@ const LoginForm = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(username, password)
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+        .then((resp) => resp.json())
+        .then(user => logInUser(user));
     }
 
     return (

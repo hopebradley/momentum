@@ -2,7 +2,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import React, { useState } from 'react';
 
-const Login = () => {
+const Login = ({ setUser }) => {
 
     const [hasAccount, setHasAccount] = useState(true);
 
@@ -10,7 +10,7 @@ const Login = () => {
         if (hasAccount) {
             return (
                 <div className="login">
-                    <LoginForm />
+                    <LoginForm setUser={setUser}/>
                     <h3>OR</h3>
                     <button onClick={() => setHasAccount(false)}>Sign Up</button>
                 </div>     
@@ -20,7 +20,7 @@ const Login = () => {
         else {
             return (
                 <div className="login">
-                    <SignUpForm />
+                    <SignUpForm setUser={setUser}/>
                     <h3>Have an account?</h3>
                     <button onClick={() => setHasAccount(true)}>Login</button>
                 </div> 
