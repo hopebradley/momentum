@@ -1,36 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
-const NavBar = ({ loggedIn }) => {
+const NavBar = ({ loggedIn, setLoggedIn, setUser }) => {
 
   function handleLogoutClick() {
     console.log("Logging Out")
-    // fetch("/logout", { method: "DELETE" }).then((r) => {
-    //   if (r.ok) {
-    //     setUser(null);
-    //   }
-    // });
-  }
-
-  function logInOrOut() {
-    if (loggedIn) {
-      return (
-        <NavLink to="/login">Login</NavLink>
-      )
-    } else {
-        return (
-          <button onClick={handleLogoutClick}>Logout</button>
-        )
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      console.log(r)
+      if (r.ok) {
+        setUser(null);
+        setLoggedIn(false);
       }
-
+    });
   }
 
   return (
     <div className="navbar">
-      <NavLink className="nav-item" activeClassName="active-item" id="main-nav" to="/"exact>HOME</NavLink>
+      <NavLink className="nav-item" activeClassName="active-item" id="main-nav" to="/"exact>MOMENTUM</NavLink>
       <NavLink className="nav-item" activeClassName="active-item" to="/new">LOG A WORKOUT</NavLink>
       <NavLink className="nav-item" activeClassName="active-item" to="/profile">PROFILE</NavLink>
-      {logInOrOut()}
+      <button className="logout" onClick={handleLogoutClick}><Link to="/">Logout</Link></button>
     </div>
 
       

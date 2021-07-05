@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginForm = ({ logInUser }) => {
+const LoginForm = ({ setUser, setLoggedIn }) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -19,12 +19,16 @@ const LoginForm = ({ logInUser }) => {
             })
         })
         .then((resp) => resp.json())
-        .then(user => logInUser(user));
+        .then(user => {
+            setUser(user);
+            setLoggedIn(true);
+        });
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                <h2>Log Into Momentum</h2>
                 <h3>Username:</h3>
                 <input 
                     id="username"
@@ -39,7 +43,9 @@ const LoginForm = ({ logInUser }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}>
                 </input>
-                <input type="submit"></input>
+                <br></br>
+                <br></br>
+                <input type="submit" value="Login"></input>
             </form>
         </div>
     )

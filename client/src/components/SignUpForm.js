@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react';
 
-const SignUpForm = ({ setUser }) => {
+const SignUpForm = ({ setUser, setLoggedIn }) => {
 
     const [username, setUsername] = useState("");
     const [name, setName] = useState("");
@@ -21,50 +21,56 @@ const SignUpForm = ({ setUser }) => {
                 username: username,
                 activity_level: activityLevel,
                 password: password,
-                passwordConfirmation: passwordConfirmation
+                password_confirmation: passwordConfirmation
             })
         })
         .then((resp) => resp.json())
-        .then(user => setUser(user));
+        .then(user => {
+            setUser(user);
+            setLoggedIn(true);
+        });
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-            <h3>What's your name?</h3>
+                <h2>Sign Up For Momentum:</h2>
+                <p>What's your name?</p>
                 <input 
                     id="name"
                     type="text" 
                     value={name}
                     onChange={(e) => setName(e.target.value)}>
                 </input>
-                <h3>Pick a cool (and unique) username:</h3>
+                <p>Pick a cool (and unique) username:</p>
                 <input 
                     id="username"
                     type="text" 
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
-                <h3>What's your activity level?</h3>
+                <p>What's your activity level?</p>
                 <select id="activity_level" value={activityLevel} onChange={(e) => setActivityLevel(e.target.value)}>
                     <option>Low</option>
                     <option>Moderate</option>
                     <option>Intense</option>
                 </select>
-                <h3>Choose a password:</h3>
+                <p>Choose a password:</p>
                 <input 
                     id="password"
                     type="text" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}>
                 </input>
-                <h3>Confirm password:</h3>
+                <p>Confirm password:</p>
                 <input 
                     id="password-confirmation"
                     type="text" 
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}>
                 </input>
+                <br></br>
+                <br></br>
                 <input type="submit"></input>
             </form>
         </div>

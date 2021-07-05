@@ -10,11 +10,19 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 .login { 
+  font-size: smaller;
   text-align: center;
   width: 55%;
   margin: auto;
   margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
   padding-bottom: 10%;
   padding-top: 5%;
   background-color: rgb(182, 230, 214);
@@ -35,8 +43,6 @@ code {
   color: rgb(66, 106, 118);
   background-color:rgb(190, 237, 217);
   border-radius: 20px;
-  border-width: 1px;
-  border-color: black;
 }
 
 #main-nav {
@@ -46,8 +52,22 @@ code {
   background-color:rgb(166, 225, 202);
 }
 
-.small-nav {
+.question {
+  font-size: xx-small;
+}
+
+button {
+  background-color: rgb(98, 155, 216);
+  font-size: small;
+  color: white;
+  border-radius: 20px;
+  border-style: none;
+  padding: 7px;
+  margin: 3%;
+}
+
+.logout {
+  float: right;
+  margin-top: 2%;
   font-size: x-small;
-  background-color:rgb(130, 222, 197);
-  color:rgb(56, 159, 203);
 }

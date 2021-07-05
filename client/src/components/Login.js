@@ -2,7 +2,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import React, { useState } from 'react';
 
-const Login = ({ setUser }) => {
+const Login = ({ setUser, setLoggedIn }) => {
 
     const [hasAccount, setHasAccount] = useState(true);
 
@@ -10,9 +10,12 @@ const Login = ({ setUser }) => {
         if (hasAccount) {
             return (
                 <div className="login">
-                    <LoginForm setUser={setUser}/>
-                    <h3>OR</h3>
-                    <button onClick={() => setHasAccount(false)}>Sign Up</button>
+                    <LoginForm setUser={setUser} setLoggedIn={setLoggedIn}/>
+                    <br></br>
+                    <div className="question">
+                        <p>Don't have an account yet?</p>
+                        <button onClick={() => setHasAccount(false)}>Sign Up</button>
+                    </div>
                 </div>     
             )
             
@@ -20,9 +23,13 @@ const Login = ({ setUser }) => {
         else {
             return (
                 <div className="login">
-                    <SignUpForm setUser={setUser}/>
-                    <h3>Have an account?</h3>
-                    <button onClick={() => setHasAccount(true)}>Login</button>
+                    <SignUpForm setUser={setUser} setLoggedIn={setLoggedIn}/>
+                    <br></br>
+                    <div className="question">
+                        <h3>Already have an account?</h3>
+                        <button onClick={() => setHasAccount(true)}>Login</button>
+                    </div>
+                    
                 </div> 
             )
         }

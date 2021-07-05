@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
     def destroy
         if session[:user_id]
-            delete :user_id
+            session.clear
             head :no_content
         else
             render json: { errors: ["Unauthorized"]}, status: :unauthorized
