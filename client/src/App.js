@@ -3,6 +3,7 @@ import Login from './components/Login';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Profile from './components/Profile';
+import Community from './components/Community';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
@@ -29,6 +30,7 @@ function App() {
       <div>
         <NavBar loggedIn={loggedIn} setUser={setUser} setLoggedIn={setLoggedIn} user={user}/>
         <Route exact path="/" render={() => <Home />}/>
+        <Route exact path="/community" render={() => <Community />}/>
         <Route exact path="/profile" render={() => <Profile user={user}/>}/>
         {/* <Route exact path="/login" render={routerProps => <Login {...routerProps} setUser={setUser} />}/>
         <Route exact path="/signup" render={routerProps => <Login {...routerProps} setUser={setUser} />}/> */}

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :workouts
+  get '/user/:id/workouts', to: 'workouts#user_workouts';
   post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
   get '/me', to: 'users#show'
