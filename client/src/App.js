@@ -27,7 +27,7 @@ function App() {
   return (
     <Router>
       <div>
-        <NavBar loggedIn={loggedIn} setUser={setUser} setLoggedIn={setLoggedIn}/>
+        <NavBar loggedIn={loggedIn} setUser={setUser} setLoggedIn={setLoggedIn} user={user}/>
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/profile" render={() => <Profile user={user}/>}/>
         {/* <Route exact path="/login" render={routerProps => <Login {...routerProps} setUser={setUser} />}/>

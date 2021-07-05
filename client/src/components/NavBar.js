@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
-const NavBar = ({ loggedIn, setLoggedIn, setUser }) => {
+const NavBar = ({ loggedIn, setLoggedIn, setUser, user }) => {
 
   function handleLogoutClick() {
     console.log("Logging Out")
@@ -17,9 +17,13 @@ const NavBar = ({ loggedIn, setLoggedIn, setUser }) => {
   return (
     <div className="navbar">
       <NavLink className="nav-item" activeClassName="active-item" id="main-nav" to="/"exact>MOMENTUM</NavLink>
-      <NavLink className="nav-item" activeClassName="active-item" to="/new">LOG A WORKOUT</NavLink>
-      <NavLink className="nav-item" activeClassName="active-item" to="/profile">PROFILE</NavLink>
-      <button className="logout" onClick={handleLogoutClick}><Link to="/">Logout</Link></button>
+      <NavLink className="nav-item" activeClassName="active-item" to="/new">log a workout</NavLink>
+      <NavLink className="nav-item" activeClassName="active-item" to="/profile">profile</NavLink>
+      <div className="logout">
+        <p>not {user.name}?</p>
+        <button onClick={handleLogoutClick}><Link to="/">logout</Link></button>
+      </div>
+      
     </div>
 
       

@@ -28,15 +28,15 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h2>Log Into Momentum</h2>
-                <h3>Username:</h3>
+                <h2>log into momentum</h2>
+                <h3>username:</h3>
                 <input 
                     id="username"
                     type="text" 
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
-                <h3>Password:</h3>
+                <h3>password:</h3>
                 <input 
                     id="password"
                     type="text" 

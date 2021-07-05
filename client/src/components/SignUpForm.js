@@ -34,35 +34,35 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h2>Sign Up For Momentum:</h2>
-                <p>What's your name?</p>
+                <h2>sign up for momentum:</h2>
+                <p>what's your name?</p>
                 <input 
                     id="name"
                     type="text" 
                     value={name}
                     onChange={(e) => setName(e.target.value)}>
                 </input>
-                <p>Pick a cool (and unique) username:</p>
+                <p>pick a cool (and unique) username:</p>
                 <input 
                     id="username"
                     type="text" 
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
-                <p>What's your activity level?</p>
+                <p>what's your activity level?</p>
                 <select id="activity_level" value={activityLevel} onChange={(e) => setActivityLevel(e.target.value)}>
                     <option>Low</option>
                     <option>Moderate</option>
                     <option>Intense</option>
                 </select>
-                <p>Choose a password:</p>
+                <p>choose a password:</p>
                 <input 
                     id="password"
                     type="text" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}>
                 </input>
-                <p>Confirm password:</p>
+                <p>confirm password:</p>
                 <input 
                     id="password-confirmation"
                     type="text" 
