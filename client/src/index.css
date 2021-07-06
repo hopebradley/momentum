@@ -23,6 +23,10 @@ h1 {
   font-style: italic;
 }
 
+.welcome {
+  margin: 5%;
+}
+
 h3 {
   font-weight: 700;
 }
@@ -114,14 +118,17 @@ button {
 
 .workout {
   float: left;
-  font-size: smaller;
+  font-size: xx-small;
   text-align: center;
-  width: 20%;
-  padding: 5px;
+  width: 30%;
+  padding: 6px;
   background-color:rgb(204, 242, 219);
   color:rgb(43, 182, 150);
-  margin: 3%;
+  margin: 15px;
+  margin-right: 5px;
   padding-top: 0px;
+  padding-bottom: 12px;
+  border-radius: 20px;
 }
 
 .profile-workout {
@@ -164,8 +171,10 @@ button {
   margin: auto;
   width: 50%;
   background-color:rgb(43, 182, 150);
+  padding-top: 5%;
   padding-bottom: 5%;
   margin-top: 5%;
+  border-radius: 20px;
 }
 
 .delete-workout {

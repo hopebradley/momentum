@@ -4,7 +4,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
 
     const [username, setUsername] = useState("");
     const [name, setName] = useState("");
-    const [activityLevel, setActivityLevel] = useState("");
+    const [activityLevel, setActivityLevel] = useState("–select one–");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
@@ -25,9 +25,14 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
             })
         })
         .then((resp) => resp.json())
-        .then(user => {
-            setUser(user);
-            setLoggedIn(true);
+        .then(data => {
+            if (data.hasOwnProperty('errors')) {
+                console.log(data.errors);
+            }
+            else {
+                setUser(data);
+                setLoggedIn(true);
+            }   
         });
     }
 
@@ -53,6 +58,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                 </input>
                 <p>what's your activity level?</p>
                 <select id="activity_level" value={activityLevel} onChange={(e) => setActivityLevel(e.target.value)}>
+                    <option disabled={true}>–select one–</option>
                     <option>low</option>
                     <option>moderate</option>
                     <option>intense</option>
@@ -62,6 +68,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     id="password"
                     type="text" 
                     value={password}
+                    autoComplete="off"
                     onChange={(e) => setPassword(e.target.value)}>
                 </input>
                 <p>confirm password:</p>
@@ -69,6 +76,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     id="password-confirmation"
                     type="text" 
                     value={passwordConfirmation}
+                    autoComplete="off"
                     onChange={(e) => setPasswordConfirmation(e.target.value)}>
                 </input>
                 <br></br>

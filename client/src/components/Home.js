@@ -4,7 +4,7 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Welcome to Momentum!</h1>
+            <h1 className="welcome">Welcome to Momentum!</h1>
         </div>
     )
 }

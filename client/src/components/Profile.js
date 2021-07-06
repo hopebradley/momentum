@@ -52,7 +52,7 @@ const Profile = ({ user, setLoggedIn, loadUser }) => {
             </div>
             <div className="user-workouts">
                 <h2>workouts:</h2>
-                {user.workouts.map(w => <ProfileWorkout key={w.id} handleDeleteWorkout={handleDeleteWorkout} user={user} workout={w}/>)}
+                {user.workouts ? user.workouts.map(w => <ProfileWorkout key={w.id} handleDeleteWorkout={handleDeleteWorkout} user={user} workout={w}/>) : null}
             </div>
             <br></br>
         </div>
