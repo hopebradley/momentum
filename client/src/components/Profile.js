@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ProfileWorkout from './ProfileWorkout';
 
-const Profile = ({ user, setLoggedIn }) => {
+const Profile = ({ user, setLoggedIn, loadUser }) => {
 
     const [deleted, setDeleted] = useState(false);
-    const [workouts, setWorkouts] = useState(user.workouts);
+    // const [workouts, setWorkouts] = useState(user.workouts);
 
-    useEffect(() => {
-        setWorkouts(user.workouts);
-    })
+    // useEffect(() => {
+    //     setWorkouts(user.workouts);
+    // })
 
     function handleDeleteAccount() {
         setDeleted(true);
@@ -23,6 +23,23 @@ const Profile = ({ user, setLoggedIn }) => {
         }, 2000);
     }
 
+    function handleDeleteWorkout(e) {
+        console.log(e.target.parentElement.id)
+        const workout_id = e.target.parentElement.id;
+        fetch("/workouts/"+ workout_id, {
+            method: "DELETE"
+        })
+        .then(() => {
+            loadUser();
+        });
+    }
+
+    if (!user.hasOwnProperty("name")) {
+        return (
+            <h1>Loading...</h1>
+        )
+    }
+
     return (
         <div className="profile">
             <h1>hello, {user.name}!</h1>
@@ -35,8 +52,7 @@ const Profile = ({ user, setLoggedIn }) => {
             </div>
             <div className="user-workouts">
                 <h2>workouts:</h2>
-                {console.log(workouts)}
-                {workouts ? workouts.map(w => <ProfileWorkout key={w.id} setWorkouts={setWorkouts} user={user} workout={w}/>) : null}
+                {user.workouts.map(w => <ProfileWorkout key={w.id} handleDeleteWorkout={handleDeleteWorkout} user={user} workout={w}/>)}
             </div>
             <br></br>
         </div>

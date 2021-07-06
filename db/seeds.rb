@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user1 = User.create!(name: "joohn", username: "john01", activity_level: "low", password: "1111", password_confirmation: "1111");
+user1 = User.create!(name: "john", username: "john01", activity_level: "low", password: "1111", password_confirmation: "1111");
 user2 = User.create!(name: "nicky", username: "nickybikes", activity_level: "intense", password: "1111", password_confirmation: "1111");
 user3 = User.create!(name: "lauren", username: "laurenthebest", activity_level: "moderate", password: "1111", password_confirmation: "1111");
 

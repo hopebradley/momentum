@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState } from 'react';
 
 const SignUpForm = ({ setUser, setLoggedIn }) => {
 
@@ -40,6 +40,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     id="name"
                     type="text" 
                     value={name}
+                    autoComplete="off"
                     onChange={(e) => setName(e.target.value)}>
                 </input>
                 <p>pick a cool (and unique) username:</p>
@@ -47,6 +48,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     id="username"
                     type="text" 
                     value={username}
+                    autoComplete="off"
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
                 <p>what's your activity level?</p>

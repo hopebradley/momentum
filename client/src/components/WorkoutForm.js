@@ -1,6 +1,6 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState } from 'react';
 
-const WorkoutForm = ({ user }) => {
+const WorkoutForm = ({ user, loadUser }) => {
 
     const [title, setTitle] = useState("");
     const [activity, setActivity] = useState("–select one–");
@@ -9,7 +9,6 @@ const WorkoutForm = ({ user }) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(title, activity, minutes, user)
         fetch("/workouts", {
             method: "POST",
             headers: {
@@ -22,14 +21,22 @@ const WorkoutForm = ({ user }) => {
                 user_id: user.id
             })
         })
-        .then(() => {
-            setCreated(true)
-            setTitle("");
-            setMinutes("");
-            setActivity("–select one–")
-            setTimeout(() => {
-                setCreated(false)
-            }, 3000);
+        .then(resp => resp.json())
+        .then((data) => {
+            console.log(data);
+            if (data.hasOwnProperty('errors')) {
+                console.log("Invalid Workout")
+            }
+            else {
+                setCreated(true)
+                setTitle("");
+                setMinutes("");
+                setActivity("–select one–")
+                setTimeout(() => {
+                    setCreated(false)
+                }, 3000);
+                loadUser();
+            }  
         });
     }
 
@@ -42,6 +49,7 @@ const WorkoutForm = ({ user }) => {
                     id="title"
                     type="text" 
                     value={title}
+                    autoComplete="off"
                     onChange={(e) => setTitle(e.target.value)}>
                 </input>
                 <p>pick an activity:</p>
@@ -62,6 +70,7 @@ const WorkoutForm = ({ user }) => {
                     id="minutes"
                     type="text" 
                     value={minutes}
+                    autoComplete="off"
                     onChange={(e) => setMinutes(e.target.value)}>
                 </input>
                 <br></br>

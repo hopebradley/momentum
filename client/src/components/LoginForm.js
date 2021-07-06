@@ -41,6 +41,7 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
                     id="username"
                     type="text" 
                     value={username}
+                    autoComplete="off"
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
                 <h3>password:</h3>
@@ -48,6 +49,7 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
                     id="password"
                     type="text" 
                     value={password}
+                    autoComplete="off"
                     onChange={(e) => setPassword(e.target.value)}>
                 </input>
                 <br></br>

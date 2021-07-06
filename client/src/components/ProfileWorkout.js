@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfileWorkout = ({ user, workout, setWorkouts }) => {
+const ProfileWorkout = ({ user, workout, handleDeleteWorkout }) => {
 
     function minutesToHours() {
         const totalMinutes = workout.minutes;
@@ -14,21 +14,16 @@ const ProfileWorkout = ({ user, workout, setWorkouts }) => {
         }
     }
 
-    function handleDeleteWorkout() {
-        fetch("/workouts/"+ workout.id, {
-            method: "DELETE"
-        })
-        .then(() => {
-            setWorkouts(user.workouts);
-        });
-    }
+    
+
+
 
     function handleUpdateWorkout(e) {
 
     }
 
     return (
-        <div className="profile-workout">
+        <div id={workout.id} className="profile-workout">
             <h3 className="workout-title">{workout.title.toLowerCase()}</h3>
             <h3>activity – {workout.activity.toLowerCase()}</h3>
             <h3>time taken – {minutesToHours()}</h3>

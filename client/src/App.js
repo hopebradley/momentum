@@ -14,14 +14,17 @@ function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    // auto-login
+    loadUser();
+  }, []);
+
+  const loadUser = () => {
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
         setLoggedIn(true);
       }
-    });
-  }, []);
+    }); 
+  }
 
   if (!loggedIn) return <Login setUser={setUser} setLoggedIn={setLoggedIn}/>;
 
@@ -32,10 +35,8 @@ function App() {
         <NavBar loggedIn={loggedIn} setUser={setUser} setLoggedIn={setLoggedIn} user={user}/>
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/community" render={() => <Community />}/>
-        <Route exact path="/profile" render={() => <Profile user={user} setLoggedIn={setLoggedIn} />}/>
-        <Route exact path="/new-workout" render={() => <WorkoutForm user={user}/>}/>
-        {/* <Route exact path="/login" render={routerProps => <Login {...routerProps} setUser={setUser} />}/>
-        <Route exact path="/signup" render={routerProps => <Login {...routerProps} setUser={setUser} />}/> */}
+        <Route exact path="/profile" render={() => <Profile user={user} setLoggedIn={setLoggedIn} loadUser={loadUser}/>}/>
+        <Route exact path="/new-workout" render={() => <WorkoutForm user={user} loadUser={loadUser}/>}/>
       </div>
     </Router>
   );
