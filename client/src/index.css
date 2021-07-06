@@ -129,11 +129,12 @@ button {
   font-size: x-small;
   text-align: center;
   width: 40%;
-  padding: 1px;
+  padding: 3px;
   background-color:rgb(204, 242, 219);
   color:rgb(43, 182, 150);
   margin: 3%;
   padding-top: 0px;
+  padding-bottom: 12px;
 
 }
 
@@ -162,4 +163,10 @@ button {
   background-color:rgb(43, 182, 150);
   padding-bottom: 5%;
   margin-top: 5%;
+}
+
+.delete-workout {
+  margin-left: 5%;
+  background-color:rgb(218, 131, 122);
+  color: white;
 }

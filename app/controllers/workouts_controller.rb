@@ -23,6 +23,13 @@ class WorkoutsController < ApplicationController
     end
 
     def destroy
+        workout = Workout.find_by(id: params[:id])
+        if workout 
+            workout.destroy
+            head :no_content
+        else
+            render json: { errors: ["Unauthorized"]}, status: :unauthorized
+        end
     end
 
     def user_workouts

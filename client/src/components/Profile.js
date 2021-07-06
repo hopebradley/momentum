@@ -4,6 +4,11 @@ import ProfileWorkout from './ProfileWorkout';
 const Profile = ({ user, setLoggedIn }) => {
 
     const [deleted, setDeleted] = useState(false);
+    const [workouts, setWorkouts] = useState(user.workouts);
+
+    useEffect(() => {
+        setWorkouts(user.workouts);
+    })
 
     function handleDeleteAccount() {
         setDeleted(true);
@@ -30,8 +35,8 @@ const Profile = ({ user, setLoggedIn }) => {
             </div>
             <div className="user-workouts">
                 <h2>workouts:</h2>
-                {console.log(user.workouts)}
-                {user.workouts ? user.workouts.map(w => <ProfileWorkout key={w.id} workout={w}/>) : null}
+                {console.log(workouts)}
+                {workouts ? workouts.map(w => <ProfileWorkout key={w.id} setWorkouts={setWorkouts} user={user} workout={w}/>) : null}
             </div>
             <br></br>
         </div>
