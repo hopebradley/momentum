@@ -92,3 +92,21 @@ button {
 .profile {
   margin: 5%;
 }
+
+.workout {
+  float: left;
+  font-size: smaller;
+  text-align: center;
+  width: 20%;
+  padding: 5px;
+  background-color:rgb(204, 242, 219);
+  color:rgb(43, 182, 150);
+  margin: 3%;
+  padding-top: 0px;
+}
+
+.workout-title {
+  font-size: large;
+  font-weight: 700;
+  font-style: italic;
+}
