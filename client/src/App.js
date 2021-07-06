@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import Community from './components/Community';
+import WorkoutForm from './components/WorkoutForm';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/community" render={() => <Community />}/>
         <Route exact path="/profile" render={() => <Profile user={user} setLoggedIn={setLoggedIn} />}/>
+        <Route exact path="/new-workout" render={() => <WorkoutForm user={user}/>}/>
         {/* <Route exact path="/login" render={routerProps => <Login {...routerProps} setUser={setUser} />}/>
         <Route exact path="/signup" render={routerProps => <Login {...routerProps} setUser={setUser} />}/> */}
       </div>

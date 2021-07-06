@@ -14,6 +14,14 @@ const ProfileWorkout = ({workout}) => {
         }
     }
 
+    function handleDeleteWorkout(e) {
+
+    }
+
+    function handleUpdateWorkout(e) {
+        
+    }
+
     return (
         <div className="profile-workout">
             <h3 className="workout-title">{workout.title.toLowerCase()}</h3>

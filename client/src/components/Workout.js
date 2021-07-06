@@ -18,7 +18,7 @@ const Workout = ({workout}) => {
         <div className="workout">
             <h3 className="workout-title">{workout.title.toLowerCase()}</h3>
             {console.log(workout.user)}
-            {/* <p>@{workout.user.username}</p> */}
+            <p>@{workout.user.username}</p>
             <h3>activity – {workout.activity.toLowerCase()}</h3>
             <h3>time taken – {minutesToHours()}</h3>
         </div>

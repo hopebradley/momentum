@@ -149,3 +149,17 @@ button {
   font-weight: 700;
   font-style: italic;
 }
+
+.delete-message {
+  font-size: x-small;
+  color: red;
+}
+
+.workout-form {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  background-color:rgb(43, 182, 150);
+  padding-bottom: 5%;
+  margin-top: 5%;
+}

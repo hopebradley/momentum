@@ -18,7 +18,7 @@ const NavBar = ({ loggedIn, setLoggedIn, setUser, user }) => {
     <div className="navbar">
       <NavLink className="nav-item" activeClassName="active-item" id="main-nav" to="/"exact>MOMENTUM</NavLink>
       <NavLink className="nav-item" activeClassName="active-item" to="/community">community</NavLink>
-      <NavLink className="nav-item" activeClassName="active-item" to="/new">log a workout</NavLink>
+      <NavLink className="nav-item" activeClassName="active-item" to="/new-workout">log a workout</NavLink>
       <NavLink className="nav-item" activeClassName="active-item" to="/profile">profile</NavLink>
       <div className="logout">
         <p>not {user.name}?</p>

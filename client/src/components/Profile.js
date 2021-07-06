@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProfileWorkout from './ProfileWorkout';
 
 const Profile = ({ user, setLoggedIn }) => {
 
+    const [deleted, setDeleted] = useState(false);
+
     function handleDeleteAccount() {
-        fetch("/delete-account", {
+        setDeleted(true);
+        setTimeout(() => {
+            fetch("/delete-account", {
             method: "DELETE"
-        })
-        .then(() => setLoggedIn(false));
+            })
+            .then(() => {
+                setLoggedIn(false);
+                setDeleted(false);
+            })
+        }, 2000);
     }
 
     return (
@@ -18,12 +26,12 @@ const Profile = ({ user, setLoggedIn }) => {
                 <p><strong>username:</strong> {user.username}</p>
                 <p><strong>activity level:</strong> {user.activity_level}</p>
                 <button onClick={handleDeleteAccount}>Delete Account</button>
+                {deleted ? <p className="delete-message">Account Deleted. Logging out now...</p> : <p></p>}
             </div>
             <div className="user-workouts">
-                <p>workouts:</p>
+                <h2>workouts:</h2>
                 {console.log(user.workouts)}
-                {user.workouts.map(w => <ProfileWorkout workout={w}/>)}
-
+                {user.workouts ? user.workouts.map(w => <ProfileWorkout key={w.id} workout={w}/>) : null}
             </div>
             <br></br>
         </div>
