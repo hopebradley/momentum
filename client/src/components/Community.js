@@ -12,8 +12,8 @@ const Community = () => {
       }, []);
 
     return (
-        <div>
-            <h1>Community Workouts</h1>
+        <div className="community-page">
+            <h1>community workouts</h1>
             {workouts.map(w => <Workout workout={w}/>)}
         </div>
     )

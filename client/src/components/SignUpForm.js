@@ -17,8 +17,8 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name: name,
-                username: username,
+                name: name.toLowerCase(),
+                username: username.toLowerCase(),
                 activity_level: activityLevel,
                 password: password,
                 password_confirmation: passwordConfirmation
@@ -51,9 +51,9 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                 </input>
                 <p>what's your activity level?</p>
                 <select id="activity_level" value={activityLevel} onChange={(e) => setActivityLevel(e.target.value)}>
-                    <option>Low</option>
-                    <option>Moderate</option>
-                    <option>Intense</option>
+                    <option>low</option>
+                    <option>moderate</option>
+                    <option>intense</option>
                 </select>
                 <p>choose a password:</p>
                 <input 

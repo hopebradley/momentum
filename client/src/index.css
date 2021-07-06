@@ -18,6 +18,15 @@ a {
   font-weight: 700;
 }
 
+h1 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+h3 {
+  font-weight: 700;
+}
+
 .login { 
   font-size: smaller;
   text-align: center;
@@ -73,6 +82,10 @@ button {
   border-radius: 20px;
   border-style: none;
   padding: 7px;
+  
+}
+
+.navbar button {
   margin: 2%;
   margin-top: 1%;
 }
@@ -93,6 +106,12 @@ button {
   margin: 5%;
 }
 
+.profile-info {
+  background-color:rgb(43, 182, 150);
+  padding: 3%;
+  border-radius: 20px;
+}
+
 .workout {
   float: left;
   font-size: smaller;
@@ -105,8 +124,28 @@ button {
   padding-top: 0px;
 }
 
+.profile-workout {
+  float: left;
+  font-size: x-small;
+  text-align: center;
+  width: 40%;
+  padding: 1px;
+  background-color:rgb(204, 242, 219);
+  color:rgb(43, 182, 150);
+  margin: 3%;
+  padding-top: 0px;
+
+}
+
 .workout-title {
   font-size: large;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.community-page h1 {
+  margin-bottom: 0px;
+  margin-left: 3%;
   font-weight: 700;
   font-style: italic;
 }

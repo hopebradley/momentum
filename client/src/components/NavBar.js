@@ -21,7 +21,7 @@ const NavBar = ({ loggedIn, setLoggedIn, setUser, user }) => {
       <NavLink className="nav-item" activeClassName="active-item" to="/new">log a workout</NavLink>
       <NavLink className="nav-item" activeClassName="active-item" to="/profile">profile</NavLink>
       <div className="logout">
-        {/* <p>not {user.name.toLowerCase()}?</p> */}
+        <p>not {user.name}?</p>
         <Link to="/"><button onClick={handleLogoutClick}>logout</button></Link>
       </div>
       

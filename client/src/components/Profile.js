@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileWorkout from './ProfileWorkout';
 
 const Profile = ({ user, setLoggedIn }) => {
 
@@ -11,8 +12,20 @@ const Profile = ({ user, setLoggedIn }) => {
 
     return (
         <div className="profile">
-            Hello, {user.name.toLowerCase()}!
-            <button onClick={handleDeleteAccount}>Delete Account</button>
+            <h1>hello, {user.name}!</h1>
+            <div className="profile-info">
+                <h3>profile information:</h3>
+                <p><strong>username:</strong> {user.username}</p>
+                <p><strong>activity level:</strong> {user.activity_level}</p>
+                <button onClick={handleDeleteAccount}>Delete Account</button>
+            </div>
+            <div className="user-workouts">
+                <p>workouts:</p>
+                {console.log(user.workouts)}
+                {user.workouts.map(w => <ProfileWorkout workout={w}/>)}
+
+            </div>
+            <br></br>
         </div>
     )
 }

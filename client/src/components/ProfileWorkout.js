@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Workout = ({workout}) => {
+const ProfileWorkout = ({workout}) => {
 
     function minutesToHours() {
         const totalMinutes = workout.minutes;
@@ -15,10 +15,8 @@ const Workout = ({workout}) => {
     }
 
     return (
-        <div className="workout">
+        <div className="profile-workout">
             <h3 className="workout-title">{workout.title.toLowerCase()}</h3>
-            {console.log(workout.user)}
-            {/* <p>@{workout.user.username}</p> */}
             <h3>activity – {workout.activity.toLowerCase()}</h3>
             <h3>time taken – {minutesToHours()}</h3>
         </div>
@@ -26,4 +24,4 @@ const Workout = ({workout}) => {
     )
 }
 
-export default Workout;
+export default ProfileWorkout;
