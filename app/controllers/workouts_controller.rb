@@ -20,6 +20,13 @@ class WorkoutsController < ApplicationController
     end
 
     def update
+        workout = Workout.find_by(id: params[:id])
+        if workout
+            workout.update(workout_params)
+            render json: workout, status: :created
+        else
+            render json: { errors: ["Workout not found"]}
+        end
     end
 
     def destroy
