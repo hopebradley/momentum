@@ -19,6 +19,16 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        user = User.find_by(id: session[:user_id])
+        if user
+            user.destroy
+            head :no_content
+        else
+            render json: { error: "Not Authorized" }, status: :unauthorized
+        end
+    end
+
     private
 
     def user_params

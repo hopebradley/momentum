@@ -17,8 +17,9 @@ const Workout = ({workout}) => {
     return (
         <div className="workout">
             <h3 className="workout-title">{workout.title.toLowerCase()}</h3>
-            <h3>activity –> {workout.activity.toLowerCase()}</h3>
-            <h3>time taken –> {minutesToHours()}</h3>
+            <p>@{workout.user.name}</p>
+            <h3>activity – {workout.activity.toLowerCase()}</h3>
+            <h3>time taken – {minutesToHours()}</h3>
         </div>
         
     )

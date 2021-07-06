@@ -19,9 +19,16 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
             })
         })
         .then((resp) => resp.json())
-        .then(user => {
-            setUser(user);
-            setLoggedIn(true);
+        .then(data => {
+            if (data.hasOwnProperty('errors')) {
+               setLoggedIn(false);
+               console.log("wrong username or password");
+            } 
+            else {
+                setUser(data);
+                console.log(data)
+                setLoggedIn(true);
+            }
         });
     }
 

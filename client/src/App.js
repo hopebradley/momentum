@@ -31,7 +31,7 @@ function App() {
         <NavBar loggedIn={loggedIn} setUser={setUser} setLoggedIn={setLoggedIn} user={user}/>
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/community" render={() => <Community />}/>
-        <Route exact path="/profile" render={() => <Profile user={user}/>}/>
+        <Route exact path="/profile" render={() => <Profile user={user} setLoggedIn={setLoggedIn} />}/>
         {/* <Route exact path="/login" render={routerProps => <Login {...routerProps} setUser={setUser} />}/>
         <Route exact path="/signup" render={routerProps => <Login {...routerProps} setUser={setUser} />}/> */}
       </div>

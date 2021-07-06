@@ -38,9 +38,9 @@ a {
 }
 
 .nav-item {  
-  font-size: x-small;
+  font-size: xx-small;
   font-weight: 700;
-  padding: 7px;
+  padding: 1px;
   margin:3%;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -49,7 +49,7 @@ a {
 
 #main-nav {
   margin-left: 0px;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   font-style: italic;
   color: white;
@@ -68,7 +68,7 @@ a {
 
 button {
   background-color: rgb(255, 255, 255);
-  font-size: x-small;
+  font-size: xx-small;
   color: rgb(43, 150, 182);
   border-radius: 20px;
   border-style: none;

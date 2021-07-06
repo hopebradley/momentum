@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :workouts
+  delete '/delete-account', to: 'users#destroy';
   get '/user/:id/workouts', to: 'workouts#user_workouts';
   post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
