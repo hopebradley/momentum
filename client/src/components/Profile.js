@@ -34,6 +34,8 @@ const Profile = ({ user, setLoggedIn, loadUser }) => {
         });
     }
 
+
+
     if (!user.hasOwnProperty("name")) {
         return (
             <h1>Loading...</h1>
@@ -52,7 +54,7 @@ const Profile = ({ user, setLoggedIn, loadUser }) => {
             </div>
             <div className="user-workouts">
                 <h2>workouts:</h2>
-                {user.workouts ? user.workouts.map(w => <ProfileWorkout key={w.id} handleDeleteWorkout={handleDeleteWorkout} user={user} workout={w}/>) : null}
+                {user.workouts ? user.workouts.map(w => <ProfileWorkout key={w.id} handleDeleteWorkout={handleDeleteWorkout} loadUser={loadUser} user={user} workout={w}/>) : null}
             </div>
             <br></br>
         </div>
