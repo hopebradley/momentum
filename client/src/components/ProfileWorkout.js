@@ -58,19 +58,29 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
         else {
             return (
                 <div id={workout.id} className="profile-workout">
-                    <form onSubmit={handleUpdateWorkout}>
+                    <form className="editing-workout" onSubmit={handleUpdateWorkout}>
+                        <h3>title</h3>
                         <input 
                             type="text" 
                             value={newTitle} 
                             onChange={(e) => setNewTitle(e.target.value)}>
                         </input>
-                        <h3>activity –</h3>
-                        <input 
+                        <h3>activity</h3>
+                        <select 
                             type="text" 
                             value={newActivity} 
-                            onChange={(e) => setNewActivity(e.target.value)}>   
-                        </input>
-                        <h3>time taken –</h3>
+                            onChange={(e) => setNewActivity(e.target.value)}>
+                                <option>running</option>
+                                <option>walking</option>
+                                <option>cycling</option>
+                                <option>team sports</option>
+                                <option>individual sports</option>
+                                <option>yoga</option>
+                                <option>dance</option>
+                                <option>swimming</option>
+                                <option>other</option> 
+                        </select>
+                        <h3>time taken (mins)</h3>
                         <input 
                             type="text" 
                             value={newMinutes} 

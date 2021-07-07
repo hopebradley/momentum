@@ -182,3 +182,25 @@ button {
   background-color:rgb(218, 131, 122);
   color: white;
 }
+
+.editing-workout {
+  padding: 1%;
+  padding-bottom: 3%;
+  font-size: xx-small;
+}
+
+.editing-workout input[type=text] {
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-style: none;
+  padding: 3px;
+}
+
+.editing-workout input[type=submit] {
+  border-radius: 20px;
+  border-style: none;
+  padding: 7px;
+  margin-top: 8%;
+  background-color: white;
+  color:rgb(43, 150, 182);
+}
