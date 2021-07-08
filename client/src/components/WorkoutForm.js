@@ -7,6 +7,9 @@ const WorkoutForm = ({ user, loadUser }) => {
     const [minutes, setMinutes] = useState("");
     const [created, setCreated] = useState(false);
 
+    const [dataInvalid, setDataInvalid] = useState(false);
+    const [errors, setErrors] = useState([]);
+
     function handleSubmit(e) {
         e.preventDefault();
         fetch("/workouts", {
@@ -25,9 +28,11 @@ const WorkoutForm = ({ user, loadUser }) => {
         .then((data) => {
             console.log(data);
             if (data.hasOwnProperty('errors')) {
-                console.log("Invalid Workout")
+                setDataInvalid(true)
+                setErrors(data.errors)
             }
             else {
+                setDataInvalid(false);
                 setCreated(true)
                 setTitle("");
                 setMinutes("");
@@ -58,8 +63,7 @@ const WorkoutForm = ({ user, loadUser }) => {
                     <option>running</option>
                     <option>walking</option>
                     <option>cycling</option>
-                    <option>team sports</option>
-                    <option>individual sports</option>
+                    <option>sports</option>
                     <option>yoga</option>
                     <option>dance</option>
                     <option>swimming</option>
@@ -76,7 +80,8 @@ const WorkoutForm = ({ user, loadUser }) => {
                 <br></br>
                 <br></br>
                 <input type="submit"></input>
-                {created ? <p>successfully created! check the community page or your profile to view your workout.</p> : <p></p>}
+                {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
+                {created ? <p className="success">successfully created! check the community page or your profile to view your workout.</p> : <p></p>}
             </form>
         </div>
     )

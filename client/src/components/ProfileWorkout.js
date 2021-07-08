@@ -7,6 +7,9 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
     const [ newActivity, setNewActivity ] = useState(workout.activity);
     const [ newTitle, setNewTitle ] = useState(workout.title);
 
+    const [dataInvalid, setDataInvalid] = useState(false);
+    const [errors, setErrors] = useState([]);
+
     function minutesToHours() {
         const totalMinutes = workout.minutes;
         if (totalMinutes < 59) {
@@ -20,13 +23,11 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
     }
 
     function handleEditWorkout() {
-        console.log(workout.id)
         setEditing(true);
     }
 
-    function handleUpdateWorkout() {
-        console.log(workout.id)
-        setEditing(false);
+    function handleUpdateWorkout(e) {
+        e.preventDefault();
         fetch("/workouts/"+workout.id, {
             method: "PATCH",
             headers: {
@@ -38,9 +39,18 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
                 minutes: newMinutes
             })
         })
-        .then(() => {
-            loadUser();
-        })
+        .then(resp => resp.json())
+        .then(data => {
+            if (data.hasOwnProperty('errors')) {
+                setDataInvalid(true);
+                setErrors(data.errors);
+            }
+            else {
+                setDataInvalid(false);
+                setEditing(false);
+                loadUser();
+            }
+        });
     }
 
     function showWorkout() {
@@ -87,6 +97,7 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
                             onChange={(e) => setNewMinutes(e.target.value)}>
                         </input>
                         <input type="submit" value="done editing"></input>
+                        {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
                     </form>
                 </div>
             )

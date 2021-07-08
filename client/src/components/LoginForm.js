@@ -58,7 +58,7 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
                 <br></br>
                 <br></br>
                 <input type="submit" value="Login"></input>
-                {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>-{e}</p> )}</div> : <p></p>}
+                {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
             </form>
         </div>
     )

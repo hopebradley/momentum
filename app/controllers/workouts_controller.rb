@@ -23,7 +23,11 @@ class WorkoutsController < ApplicationController
         workout = find_workout
         if workout
             workout.update(workout_params)
-            render json: workout, status: :created
+            if workout.valid?
+                render json: workout, status: :created
+            else
+                render_unprocessable_entity_response(workout)
+            end
         else
             render_not_found_response
         end

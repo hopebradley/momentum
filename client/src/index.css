@@ -229,3 +229,13 @@ button {
   color: rgb(157, 14, 14);
   background-color: rgb(249, 191, 191);
 }
+
+.success {
+  font-size: xx-small;
+  margin: 2%;
+  margin-top: 4%;
+  padding: 1%;
+  border-radius: 20px;
+  color: rgb(14, 157, 35);
+  background-color: rgb(196, 249, 191);
+}
