@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-
     def create
         user = User.create(user_params)
         if user.valid?
@@ -17,7 +15,7 @@ class UsersController < ApplicationController
         if user
             render json: user, status: :created, include: :workouts
         else
-            render json: { errors: ["Unauthorized"] }, status: :unauthorized
+            render_unauthorized_response
         end
     end
 
@@ -27,9 +25,10 @@ class UsersController < ApplicationController
             user.destroy
             head :no_content
         else
-            render json: { errors: ["Unauthorized"] }, status: :unauthorized
+            render_unauthorized_response
         end
     end
+
 
     private
 
@@ -37,12 +36,17 @@ class UsersController < ApplicationController
         User.find_by(id: session[:user_id])
     end
 
-    def render_unprocessable_entity_response(user)
-        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
-    end
-
     def user_params
         params.permit(:username, :name, :activity_level, :password, :password_confirmation, :user)
+    end
+
+    # exception handling helper methods
+    def render_unauthorized_response
+        render json: { errors: ["Unauthorized"]}, status: :unauthorized
+    end
+
+    def render_unprocessable_entity_response(user)
+        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
     end
 
 end
