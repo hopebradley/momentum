@@ -4,6 +4,8 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [dataInvalid, setDataInvalid] = useState(false);
+    const [errors, setErrors] = useState([]);
 
 
     function handleSubmit(e) {
@@ -22,7 +24,8 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
         .then(data => {
             if (data.hasOwnProperty('errors')) {
                setLoggedIn(false);
-               console.log("wrong username or password");
+               setDataInvalid(true);
+               setErrors(data.errors);
             } 
             else {
                 setUser(data);
@@ -55,6 +58,7 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
                 <br></br>
                 <br></br>
                 <input type="submit" value="Login"></input>
+                {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>-{e}</p> )}</div> : <p></p>}
             </form>
         </div>
     )

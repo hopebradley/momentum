@@ -39,9 +39,10 @@ h3 {
   margin-top: 5%;
   margin-bottom: 5%;
   padding: 2%;
-  padding-bottom: 10%;
-  padding-top: 5%;
+  padding-bottom: 8%;
+  padding-top: 3%;
   background-color: rgb(43, 182, 150);
+  border-radius: 20px;
 }
 
 .login input {
@@ -217,4 +218,14 @@ button {
   margin-top: 8%;
   background-color: white;
   color:rgb(43, 150, 182);
+}
+
+.errors {
+  font-size: xx-small;
+  margin: 2%;
+  margin-top: 4%;
+  padding: 1%;
+  border-radius: 20px;
+  color: rgb(157, 14, 14);
+  background-color: rgb(249, 191, 191);
 }

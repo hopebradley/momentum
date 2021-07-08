@@ -8,6 +8,9 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
+    const [dataInvalid, setDataInvalid] = useState(false);
+    const [errors, setErrors] = useState([]);
+
     function handleSubmit(e) {
         e.preventDefault();
         console.log(name, username, activityLevel, password, passwordConfirmation)
@@ -27,7 +30,10 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
         .then((resp) => resp.json())
         .then(data => {
             if (data.hasOwnProperty('errors')) {
-                console.log(data.errors);
+                console.log(data.errors)
+                
+                setErrors(data.errors);
+                setDataInvalid(true);
             }
             else {
                 setUser(data);
@@ -35,6 +41,15 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
             }   
         });
     }
+
+    function displayErrors() {
+
+        return errors.map((e) => {
+            return <p>-{e}</p>
+        })
+
+    }
+
 
     return (
         <div>
@@ -82,7 +97,9 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                 <br></br>
                 <br></br>
                 <input type="submit"></input>
+                {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>-{e}</p> )}</div> : <p></p>}
             </form>
+            
         </div>
     )
 }
