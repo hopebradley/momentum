@@ -9,7 +9,11 @@ class WorkoutsController < ApplicationController
         user = find_user
         if user
             workout = user.workouts.create(workout_params)
-            render json: workout, status: :created
+            if workout.valid?
+                render json: workout, status: :created
+            else
+                render_unprocessable_entity_response(workout)
+            end
         else
             render_unauthorized_response
         end
@@ -75,3 +79,4 @@ class WorkoutsController < ApplicationController
 
 
 end
+
