@@ -44,6 +44,13 @@ h3 {
   background-color: rgb(43, 182, 150);
 }
 
+.login input {
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-style: none;
+  padding: 3px;
+}
+
 .navbar {
   padding: 3%;
   background-color: rgb(43, 182, 150);
@@ -177,8 +184,15 @@ button {
   border-radius: 20px;
 }
 
-.delete-workout {
-  margin-left: 5%;
+.workout-form input {
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-style: none;
+  padding: 3px;
+}
+
+.delete-button {
+  margin-left: 2%;
   background-color:rgb(218, 131, 122);
   color: white;
 }

@@ -51,7 +51,7 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
                     <h3>activity – {workout.activity.toLowerCase()}</h3>
                     <h3>time taken – {minutesToHours()}</h3>
                     <button onClick={handleEditWorkout}>edit workout</button>
-                    <button className="delete-workout" onClick={handleDeleteWorkout}>delete workout</button>
+                    <button className="delete-button" onClick={handleDeleteWorkout}>delete workout</button>
                 </div> 
             )
         }

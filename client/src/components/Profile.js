@@ -49,7 +49,7 @@ const Profile = ({ user, setLoggedIn, loadUser }) => {
                 <h3>profile information:</h3>
                 <p><strong>username:</strong> {user.username}</p>
                 <p><strong>activity level:</strong> {user.activity_level}</p>
-                <button onClick={handleDeleteAccount}>Delete Account</button>
+                <button className="delete-button" onClick={handleDeleteAccount}>Delete Account</button>
                 {deleted ? <p className="delete-message">Account Deleted. Logging out now...</p> : <p></p>}
             </div>
             <div className="user-workouts">
