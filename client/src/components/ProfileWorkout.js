@@ -96,6 +96,7 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
                             value={newMinutes} 
                             onChange={(e) => setNewMinutes(e.target.value)}>
                         </input>
+                        <br></br>
                         <input type="submit" value="done editing"></input>
                         {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
                     </form>

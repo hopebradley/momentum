@@ -1,91 +1,36 @@
-# Project Template: React/Rails API
+# MOMENTUM
 
 ## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
+Momentum is an app for logging workouts and sharing them with others.
 
 ## Requirements
 
 - Ruby 2.7.3
 - NodeJS (v14 or higher), and npm
-- Heroku CLI
 - Postgresql
 
-See [Environment Setup](#environment-setup) below for instructions on installing
-these tools if you don't already have them.
+## Installation
 
-## Setup
+After forking and cloning this repository, run:
 
-**Fork and clone this repository**.
-
-Then run:
-
-```sh
-bundle install
-rails db:create
-npm install --prefix client
+### `bundle install`
+### `rails db:create`
+### `npm install --prefix client`
 ```
 
-You can use the following commands to run the application:
+## Running the App
 
-- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
-- `npm start --prefix client`: run the frontend on
-  [http://localhost:4000](http://localhost:4000)
-- `rails start`: run the frontend and backend together with one command
+To start the backend on [https://localhost:3000], run:
+### `rails s`
 
-Make sure to also update this README to include documentation about
-your project. Here's a list of some [awesome readmes][] for inspiration.
+To start the frontend on [https://localhost:4000], run:
+### `npm start --prefix client`
 
-## Deploying
+Running 
+### `rails start` 
+will run the frontend and backend together with one command.
 
-This application has all the starter code needed to help you deploy your
-application to Heroku. It's recommended to deploy your project early and push up
-changes often to ensure that your code works equally well in production and
-development environments.
-
-To deploy, first log in to your Heroku account using the Heroku CLI:
-
-```sh
-heroku login
-```
-
-Create the new Heroku app:
-
-```sh
-heroku create my-app-name
-```
-
-Add the builds for Heroku to run the Rails app on Ruby and build the React app
-on Node:
-
-```sh
-heroku buildpacks:add heroku/nodejs --index 1
-heroku buildpacks:add heroku/ruby --index 2
-```
-
-To deploy, commit your code and push the changes to Heroku:
-
-```sh
-git add .
-git commit -m 'Commit message'
-git push heroku main
-```
-
-> Note: depending on your Git configuration, your default branch might be named
-> `master` or `main`. You can verify which by running
-> `git branch --show-current`. If it's `master`, you'll need to run
-> `git push heroku master` instead.
-
-Any time you have changes to deploy, just make sure your changes are committed
-on the main branch of your repo, and push those changes to Heroku to deploy
-them.
-
-You can view your deployed app with:
-
-```sh
-heroku open
-```
 
 ## Environment Setup
 
@@ -168,29 +113,4 @@ brew services start postgresql
 [awesome readmes]: https://github.com/matiassingers/awesome-readme
 [postgresql wsl]: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
 
-## Troubleshooting
 
-If you ran into any errors along the way, here are some things you can try to
-troubleshoot:
-
-- If you got a server connection error when you tried to run `rails db:create`,
-  one option for solving this problem for Mac users is to install the Postgres
-  app. To do this, first uninstall `postgresql` by running
-  `brew remove postgresql`. Next, download the app from the
-  [Postgres downloads page][] and install it. Launch the app and click
-  "Initialize" to create a new server. You should now be able to run
-  `rails db:create`.
-- If your app failed to deploy at the build stage, make sure your local
-  environment is set up correctly by following the steps at the beginning of
-  this lesson. Check that you have the latest versions of Ruby and Bundler, and
-  ensure that Postgresql was installed successfully.
-- If you deployed successfully, but you ran into issues when you visited the
-  site, make sure you migrated and seeded the database. Also, make sure that
-  your application works locally and try to debug any issues on your local
-  machine before re-deploying. You can also check the logs on the server by
-  running `heroku logs`.
-
-For additional support, check out these guides on Heroku:
-
-- [Deploying a Rails 6 App to Heroku][heroku rails deploying guide]
-- [Rails Troubleshooting on Heroku][troubleshooting guide on heroku]
