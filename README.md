@@ -3,12 +3,12 @@
 ## Description
 
 Momentum is an app for logging workouts and sharing them with others.
-
+<!-- 
 ## Requirements
 
 - Ruby 2.7.3
 - NodeJS (v14 or higher), and npm
-- Postgresql
+- Postgresql -->
 
 ## Installation
 
