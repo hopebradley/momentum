@@ -11,10 +11,12 @@ user1 = User.create!(name: "john", username: "john01", activity_level: "low", pa
 user2 = User.create!(name: "nicky", username: "nickybikes", activity_level: "intense", password: "1111", password_confirmation: "1111");
 user3 = User.create!(name: "lauren", username: "laurenthebest", activity_level: "moderate", password: "1111", password_confirmation: "1111");
 
-user1.workouts.create!(title: "baseball with the bros", activity: "team sports", minutes: "113");
+user1.workouts.create!(title: "baseball with the bros", activity: "sports", minutes: 113);
+user1.workouts.create!(title: "morning yoga", activity: "yoga", minutes: 67);
 
-user2.workouts.create!(title: "longest ride ever!", activity: "cycling", minutes: "231");
+user2.workouts.create!(title: "longest ride ever!", activity: "cycling", minutes: 231);
+user2.workouts.create!(title: "uphill battle", activity: "cycling", minutes: 43)
 
-user3.workouts.create!(title: "relaxing walk", activity: "walking", minutes: "46");
+user3.workouts.create!(title: "relaxing walk", activity: "walking", minutes: 46);
 
 
