@@ -15,9 +15,14 @@ Momentum is an app for logging workouts and sharing them with others.
 After forking and cloning this repository, run:
 
 ### `bundle install`
-### `rails db:create`
+### `rails db:migrate`
 ### `npm install --prefix client`
-```
+
+Seeding the database is optional. If you would like to see example users and workouts upon starting the app, run:
+
+### `rails db:seed`
+
+If you skip this step, you can sign up users and create workouts of your choosing to see the app in action.
 
 ## Running the App
 
