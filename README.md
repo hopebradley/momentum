@@ -36,86 +36,19 @@ Running
 ### `rails start` 
 will run the frontend and backend together with one command.
 
+## Use
 
-## Environment Setup
+When you start the app, you will be brought to a login page. On your first time opening Momentum you won't have an account, so click the button to sign up instead. Once you're signed in, you can go to the community page to view others' workouts (if you didn't seed the database, this will be blank until you manually create more users and workouts). To log your own workout, click the 'log a workout' link in the navigation bar and fill out the form with the information you want. When you go to your profile, you can see your user information along with any workouts you have logged. Workouts you've created can be edited and deleted. If you want to delete your account, click the 'delete account' button and your account along with all your workouts will be deleted from the database.
 
-### Ruby
+## Contact Me:
 
-Ensure you are running the
-[latest Ruby release supported by Heroku][heroku ruby]. At the time of writing,
-that's `2.7.3`. You can verify with:
+Hope Bradley
+<br>
+Email: hope.e.bradley@gmail.com
+<br>
+LinkedIn: https://www.linkedin.com/in/hopebradl3y/
+<br>
+Blog: <a href="https://hopebradley.com">hopebradley.com</a
 
-```sh
-ruby -v
-```
-
-If you don't see `2.7.3`, you can install it and set it as the default version:
-
-```sh
-rvm install 2.7.3
-rvm --default use 2.7.3
-```
-
-You should also install the latest versions of `bundler` and `rails`:
-
-```sh
-gem install bundler
-gem install rails
-```
-
-[heroku ruby]: https://devcenter.heroku.com/articles/ruby-support#supported-runtimes
-
-### Install NodeJS
-
-Verify you are running a recent version of Node with:
-
-```sh
-node -v
-```
-
-If your Node version is less than 14, update it with:
-
-```sh
-nvm install node
-```
-
-You can also update your npm version with:
-
-```sh
-npm i -g npm
-```
-
-### Install the Heroku CLI
-
-Follow this guide to install Heroku CLI (if you don't already have it):
-
-- [https://devcenter.heroku.com/articles/heroku-cli#download-and-install](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-
-### Install Postgresql
-
-Heroku requires that you use Postgresql for your database instead of SQLite.
-Postgresql (or just Postgres for short) is an advanced database management
-system with more features than SQLite. If you don't already have it installed,
-you'll need to set it up.
-
-To install Postgres for WSL, follow this guide:
-
-- [https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql][postgresql wsl]
-
-To install Postgres for OSX, you can use Homebrew:
-
-```sh
-brew install postgresql
-```
-
-Once Postgres has been installed, run this command to start the Postgres
-service:
-
-```sh
-brew services start postgresql
-```
-
-[awesome readmes]: https://github.com/matiassingers/awesome-readme
-[postgresql wsl]: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
 
 
