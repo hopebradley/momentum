@@ -10,10 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_172313) do
+ActiveRecord::Schema.define(version: 2021_08_12_044614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alerts", force: :cascade do |t|
+    t.string "contents"
+    t.string "job_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.string "recipient_type"
+  end
+
+  create_table "caregivers", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "name"
+    t.string "bio"
+    t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+    t.string "phone_number"
+  end
+
+  create_table "employers", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "name"
+    t.string "bio"
+    t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+    t.string "phone_number"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "salary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "caregiver_id"
+    t.integer "employer_id"
+    t.string "salary_type"
+    t.string "date"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = find_user
+        user = current_user
         if user
             render json: user, status: :created, include: :workouts
         else
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        user = find_user
+        user = current_user
         if user
             user.destroy
             head :no_content
@@ -32,21 +32,10 @@ class UsersController < ApplicationController
 
     private
 
-    def find_user
-        User.find_by(id: session[:user_id])
-    end
-
     def user_params
         params.permit(:username, :name, :activity_level, :password, :password_confirmation, :user)
     end
 
     # exception handling helper methods
-    def render_unauthorized_response
-        render json: { errors: ["Unauthorized"]}, status: :unauthorized
-    end
-
-    def render_unprocessable_entity_response(user)
-        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
-    end
 
 end
