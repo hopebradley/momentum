@@ -55,6 +55,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <h2>sign up for momentum:</h2>
+                <br></br>
                 <p>what's your name?</p>
                 <input 
                     id="name"
@@ -63,6 +64,8 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     autoComplete="off"
                     onChange={(e) => setName(e.target.value)}>
                 </input>
+                <br></br>
+                <br></br>
                 <p>pick a cool (and unique) username:</p>
                 <input 
                     id="username"
@@ -71,6 +74,8 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     autoComplete="off"
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
+                <br></br>
+                <br></br>
                 <p>what's your activity level?</p>
                 <select id="activity_level" value={activityLevel} onChange={(e) => setActivityLevel(e.target.value)}>
                     <option disabled={true}>–select one–</option>
@@ -78,6 +83,8 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     <option>moderate</option>
                     <option>intense</option>
                 </select>
+                <br></br>
+                <br></br>
                 <p>choose a password:</p>
                 <input 
                     id="password"
@@ -86,6 +93,8 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                     autoComplete="off"
                     onChange={(e) => setPassword(e.target.value)}>
                 </input>
+                <br></br>
+                <br></br>
                 <p>confirm password:</p>
                 <input 
                     id="password-confirmation"
@@ -96,7 +105,7 @@ const SignUpForm = ({ setUser, setLoggedIn }) => {
                 </input>
                 <br></br>
                 <br></br>
-                <input type="submit"></input>
+                <input className="button is-success" type="submit"></input>
                 {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>-{e}</p> )}</div> : <p></p>}
             </form>
             

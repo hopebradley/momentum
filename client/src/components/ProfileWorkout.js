@@ -56,18 +56,23 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
     function showWorkout() {
         if (!editing) {
             return (
-                <div id={workout.id} className="profile-workout">
-                    <h3 className="workout-title">{workout.title.toLowerCase()}</h3>
-                    <h3>activity – {workout.activity.toLowerCase()}</h3>
-                    <h3>time taken – {minutesToHours()}</h3>
-                    <button onClick={handleEditWorkout}>edit workout</button>
-                    <button className="delete-button" onClick={handleDeleteWorkout}>delete workout</button>
+                <div id={workout.id} className="profile-workout box">
+                    <div className="profile-workout-title">
+                        <h3>{workout.title.toLowerCase()}</h3>
+                    </div>
+                    <div className="profile-workout-body">
+                        <h3>{workout.activity.toLowerCase()}</h3>
+                        <h3>{minutesToHours()}</h3>
+                        <button className="button is-info is-light is-outlined is-small" onClick={handleEditWorkout}>edit workout</button>
+                        <br></br>
+                        <button className="button is-danger is-light is-outlined is-small" onClick={handleDeleteWorkout}>delete workout</button>
+                    </div>
                 </div> 
             )
         }
         else {
             return (
-                <div id={workout.id} className="profile-workout">
+                <div id={workout.id} className="profile-workout box">
                     <form className="editing-workout" onSubmit={handleUpdateWorkout}>
                         <h3>title</h3>
                         <input 

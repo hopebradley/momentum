@@ -12,7 +12,7 @@ const Community = () => {
       }, []);
 
     return (
-        <div className="community-page">
+        <div className="community-page has-background-success-light">
             <h1>community workouts</h1>
             {workouts.map(w => <Workout workout={w}/>)}
         </div>

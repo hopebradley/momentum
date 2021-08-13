@@ -9,12 +9,12 @@ const Login = ({ setUser, setLoggedIn }) => {
     function showLogin() {
         if (hasAccount) {
             return (
-                <div className="login">
+                <div className="login box">
                     <LoginForm setUser={setUser} setLoggedIn={setLoggedIn}/>
                     <br></br>
                     <div className="question">
                         <p>don't have an account yet?</p>
-                        <button onClick={() => setHasAccount(false)}>sign up here</button>
+                        <button className="button is-medium is-info is-light is-outlined" onClick={() => setHasAccount(false)}>sign up</button>
                     </div>
                 </div>     
             )
@@ -22,12 +22,12 @@ const Login = ({ setUser, setLoggedIn }) => {
         }
         else {
             return (
-                <div className="login">
+                <div className="login box">
                     <SignUpForm setUser={setUser} setLoggedIn={setLoggedIn}/>
                     <br></br>
                     <div className="question">
                         <h3>already have an account?</h3>
-                        <button onClick={() => setHasAccount(true)}>login here</button>
+                        <button className="button is-medium is-info is-light is-outlined" onClick={() => setHasAccount(true)}>login</button>
                     </div>
                     
                 </div> 

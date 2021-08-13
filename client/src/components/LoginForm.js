@@ -39,6 +39,7 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <h2>log into momentum</h2>
+                <br></br>
                 <h3>username:</h3>
                 <input 
                     id="username"
@@ -47,6 +48,8 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
                     autoComplete="off"
                     onChange={(e) => setUsername(e.target.value)}>
                 </input>
+                <br></br>
+                <br></br>
                 <h3>password:</h3>
                 <input 
                     id="password"
@@ -57,7 +60,7 @@ const LoginForm = ({ setUser, setLoggedIn }) => {
                 </input>
                 <br></br>
                 <br></br>
-                <input type="submit" value="Login"></input>
+                <input className="button is-success" type="submit" value="Login"></input>
                 {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
             </form>
         </div>

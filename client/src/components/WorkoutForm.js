@@ -46,10 +46,11 @@ const WorkoutForm = ({ user, loadUser }) => {
     }
 
     return (
-        <div className="workout-form">
+        <div className="workout-form box">
+            <h1>log a workout</h1>
+            <br></br>
             <form onSubmit={handleSubmit}>
-                <h2>log a workout:</h2>
-                <p>title:</p>
+                workout title
                 <input 
                     id="title"
                     type="text" 
@@ -57,7 +58,9 @@ const WorkoutForm = ({ user, loadUser }) => {
                     autoComplete="off"
                     onChange={(e) => setTitle(e.target.value)}>
                 </input>
-                <p>pick an activity:</p>
+                <br></br>
+                <br></br>
+                pick an activity
                 <select id="activity" value={activity} onChange={(e) => setActivity(e.target.value)}>
                     <option disabled={true}>–select one–</option>
                     <option>running</option>
@@ -69,7 +72,9 @@ const WorkoutForm = ({ user, loadUser }) => {
                     <option>swimming</option>
                     <option>other</option>
                 </select>
-                <p>minutes spent:</p>
+                <br></br>
+                <br></br>
+                minutes spent
                 <input 
                     id="minutes"
                     type="text" 
@@ -79,7 +84,7 @@ const WorkoutForm = ({ user, loadUser }) => {
                 </input>
                 <br></br>
                 <br></br>
-                <input type="submit"></input>
+                <input className="button is-success" type="submit"></input>
                 {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
                 {created ? <p className="success">successfully created! check the community page or your profile to view your workout.</p> : <p></p>}
             </form>
