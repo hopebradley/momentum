@@ -251,9 +251,17 @@ select {
 .question .button {
   border-radius: 10px;
 }
+.editing-workout {
+  color: rgb(90, 197, 156);
+}
+.editing-workout input[type=text],select {
+  margin-left: 0px;
+  width: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: lightblue;
+}
 
-
-/*
 .delete-message {
   font-size: small;
   color: red;
@@ -282,4 +290,4 @@ select {
   border-radius: 20px;
   color: rgb(14, 157, 35);
   background-color: rgb(196, 249, 191);
-} */
+}

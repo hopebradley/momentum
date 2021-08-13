@@ -88,8 +88,6 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
                                 <option>running</option>
                                 <option>walking</option>
                                 <option>cycling</option>
-                                <option>team sports</option>
-                                <option>individual sports</option>
                                 <option>yoga</option>
                                 <option>dance</option>
                                 <option>swimming</option>
@@ -102,7 +100,7 @@ const ProfileWorkout = ({ user, workout, handleDeleteWorkout, loadUser}) => {
                             onChange={(e) => setNewMinutes(e.target.value)}>
                         </input>
                         <br></br>
-                        <input type="submit" value="done editing"></input>
+                        <input className="button is-info is-light is-outlined"type="submit" value="done editing"></input>
                         {dataInvalid ? <div className="errors"><h3>Uh oh!</h3>{errors.map((e) => <p>{e}</p> )}</div> : <p></p>}
                     </form>
                 </div>
