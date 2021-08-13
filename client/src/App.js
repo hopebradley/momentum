@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="momentum-body">
         <NavBar loggedIn={loggedIn} setUser={setUser} setLoggedIn={setLoggedIn} user={user}/>
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/community" render={() => <Community />}/>

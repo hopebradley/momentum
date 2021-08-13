@@ -15,12 +15,13 @@ const Workout = ({workout}) => {
     }
 
     return (
-        <div className="workout">
+        <div className="workout box">
             <h3 className="workout-title">{workout.title.toLowerCase()}</h3>
-            {console.log(workout.user)}
-            <p>@{workout.user.username}</p>
-            <h3>activity – {workout.activity.toLowerCase()}</h3>
-            <h3>time taken – {minutesToHours()}</h3>
+            <div className="workout-body">
+                <p>@{workout.user.username}</p>
+                <h3>activity – {workout.activity.toLowerCase()}</h3>
+                <h3>time taken – {minutesToHours()}</h3>
+            </div>
         </div>
         
     )

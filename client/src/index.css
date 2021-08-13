@@ -1,10 +1,15 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
 body {
   margin: 0;
   color: white;
-  background-color:rgb(172, 211, 187);
+  /* background-color:rgb(172, 211, 187); */
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.momentum-body {
+  background-color: rgb(172, 211, 187);
 }
 
 code {
@@ -65,31 +70,43 @@ h3 {
   padding: 7px;
 }
 
-.navbar {
-  padding: 3%;
-  background-color: rgb(43, 182, 150);
-  color: black;
-}
-
 .nav-item {  
   font-size: small;
   font-weight: 700;
-  padding: 1px;
-  margin:3%;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  border-radius: 20px;
+  margin-left: 20%;
+  color: white;
 }
 
-#main-nav {
-  margin-left: 0px;
-  font-size: xx-large;
+.main-nav {
+  font-size: 50px;
   font-weight: 700;
   font-style: italic;
   color: white;
 }
+.community-page {
+  margin: 2%;
+}
+.workout {
+  float: left;
+  font-size: small;
+  width: 29%;
+  margin: 2%;
+  padding: 1%;
+  border-radius: 10px;
+  }
+.workout-title {
+  font-size: x-large;
+  font-weight: 700;
+  font-style: italic;
+  width: 48%;
+  float: left;
+}
+.workout-body {
+  float: right;
+  width: 48%;
+}
 
-.question {
+/* .question {
   font-size: large;
   background-color:rgb(130, 196, 220);
   width: 50%;
@@ -137,44 +154,14 @@ button {
   border-radius: 20px;
 }
 
-.workout {
-  float: left;
-  font-size: small;
-  text-align: center;
-  width: 40%;
-  height: 50%;
-  padding: 6px;
-  background-color:rgb(204, 242, 219);
-  color:rgb(43, 182, 150);
-  margin: 15px;
-  margin-right: 5px;
-  padding-top: 0px;
-  padding-bottom: 12px;
-  border-radius: 20px;
-}
+
 
 .profile-workout {
-  float: left;
-  font-size: small;
-  text-align: center;
   width: 30%;
-  padding: 3px;
-  background-color:rgb(204, 242, 219);
-  color:rgb(43, 182, 150);
-  margin-right: 15px;
-  padding-top: 0px;
-  padding-bottom: 12px;
-  border-radius: 20px;
-  margin-bottom: 15px;
+  float: left;
 }
 
-.workout-title {
-  font-size: x-large;
-  font-weight: 700;
-  font-style: italic;
-  margin-top: 7%;
-  margin-bottom: 0px;
-}
+
 
 .community-page h1 {
   margin-bottom: 0px;
@@ -252,4 +239,4 @@ button {
   border-radius: 20px;
   color: rgb(14, 157, 35);
   background-color: rgb(196, 249, 191);
-}
+} */
